@@ -20,7 +20,7 @@ void humanmanagement::on_insert_human_clicked()
 {
     QSqlQuery query;
     QString name = ui->lineEdit->text();
-    query.prepare("call sp_insert_human(:_name)");
+    query.prepare("call device_management.sp_insert_human(:_name)");
     query.bindValue(0, name);
     query.exec();
 }
@@ -40,7 +40,7 @@ void humanmanagement::on_update_human_clicked()
 {
     QSqlQuery query;
     QString name = ui->lineEdit->text();
-    query.prepare("call sp_update_human(:_name)");
+    query.prepare("call device_management.sp_update_human(:_name)");
     query.bindValue(0, name);
     query.exec();
 }
